@@ -1,0 +1,64 @@
+<!-- Cod PHP -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Clients</title>
+    <link rel="stylesheet" href="addClients.css" />
+  </head>
+
+  <body>
+    <form class="addClient" method="post" action="./addClients.php">
+      <ul>
+        <li>
+          <input
+            type="text"
+            name="name"
+            class="field-style field-split align-left"
+            placeholder="Name"
+            required
+          />
+          <input
+            type="text"
+            name="primaryname"
+            class="field-style field-split align-right"
+            placeholder="Primary Name"
+            required
+          />
+        </li>
+        <li>
+          <input
+            type="text"
+            name="university"
+            class="field-style field-split align-left"
+            placeholder="University"
+            required
+          />
+          <input
+            type="number"
+            name="yearofstudy"
+            class="field-style field-split align-right"
+            min="0"
+            max="6"
+            placeholder="Year of study"
+            required
+          />
+        </li>
+        <li>
+          <input
+            type="text"
+            name="subjectmatter"
+            class="field-style field-split align-left"
+            placeholder="Subjectmatter"
+          />
+        </li>
+        <li>
+          <input type="submit" value="Add Client" name="submit" />
+        </li>
+      </ul>
+    </form>
+  </body>
+</html>

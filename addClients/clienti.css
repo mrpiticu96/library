@@ -1,0 +1,29 @@
+body {
+  background: #d7f0ed;
+  text-align: center;
+  padding: 10%;
+}
+
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+table,
+td,
+th {
+  border: 1px solid black;
+  text-align: center;
+  vertical-align: bottom;
+  font-family: "Montserrat";
+}
+
+table {
+  width: 60%;
+  border-collapse: collapse;
+}
+table.center {
+  margin-left: auto;
+  margin-right: auto;
+}

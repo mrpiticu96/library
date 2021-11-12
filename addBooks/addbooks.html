@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Books</title>
+    <link rel="stylesheet" href="addbooks.css" />
+  </head>
+
+  <body>
+    <form class="addBooks" method="post" action="./postbooks.php">
+      <ul>
+        <li>
+          <input
+            type="text"
+            name="title"
+            class="field-style field-split align-left"
+            placeholder="Title"
+            required
+          />
+          <input
+            type="text"
+            name="author"
+            class="field-style field-split align-right"
+            placeholder="Author"
+            required
+          />
+        </li>
+        <li>
+          <input
+            type="text"
+            name="genre"
+            class="field-style field-split align-left"
+            placeholder="Genre"
+            required
+          />
+          <input
+            type="number"
+            name="pages"
+            class="field-style field-split align-right"
+            min="0"
+            placeholder="Page Numbers"
+            required
+          />
+        </li>
+        <li>
+          <input
+            type="text"
+            name="status"
+            class="field-style field-split align-left"
+            placeholder="Status"
+          />
+
+          <input
+            type="text"
+            name="assignedto"
+            class="field-style field-split align-right"
+            placeholder="Assigned To"
+          />
+        </li>
+        <li>
+          <input type="submit" value="Add Book" name="submit" />
+        </li>
+      </ul>
+    </form>
+  </body>
+</html>

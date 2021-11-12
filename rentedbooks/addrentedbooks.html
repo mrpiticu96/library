@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Rented Books</title>
+    <link rel="stylesheet" href="addrentedbooks.css" />
+  </head>
+
+  <body>
+    <form class="addRentedBooks" method="post" action="./addrentedbooks.php">
+      <ul>
+        <li>
+          <input
+            type="text"
+            name="bookname"
+            class="field-style field-split align-left"
+            placeholder="Book name"
+            required
+          />
+          <input
+            type="text"
+            name="assignedto"
+            class="field-style field-split align-right"
+            placeholder="Assigned to"
+            required
+          />
+        </li>
+        <li>
+          <input
+            type="date"
+            name="rentdate"
+            class="field-style field-split align-left"
+            placeholder="Rent Date"
+            required
+          />
+          <input
+            type="date"
+            name="returndate"
+            class="field-style field-split align-right"
+            placeholder="Return Date"
+            required
+          />
+        </li>
+        <li>
+          <input
+            type="text"
+            name="penality"
+            class="field-style field-split align-left"
+            placeholder="Penality"
+          />
+        </li>
+        <li>
+          <input type="submit" value="Add rented book" name="submit" />
+        </li>
+      </ul>
+    </form>
+  </body>
+</html>

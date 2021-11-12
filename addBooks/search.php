@@ -2,7 +2,7 @@
 require 'db_conn.php';
 
 if (isset($_POST["search"])) {
-  // MySQL Injection 
+ 
   $genre = mysqli_real_escape_string($conn, $_POST["query"]);
 
   $sql = "SELECT * FROM books WHERE genre='$genre'";

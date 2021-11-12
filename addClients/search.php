@@ -1,28 +1,17 @@
 <?php
 require 'db_conn.php';
 
-if (isset($_POST["search"]) && empty($_POST["query"]) === false) {
+if (isset($_POST["search"])) {
   
-  $genre = mysqli_real_escape_string($conn, $_POST["query"]);
+  $subjectmatter = mysqli_real_escape_string($conn, $_POST["query"]);
 
-  $sql = "SELECT * FROM books WHERE genre='$genre'";
+  $sql = "SELECT * FROM clients WHERE subjectmatter='$subjectmatter'";
 
   $results = mysqli_query($conn, $sql);
 
   $res = mysqli_fetch_assoc($results);
-} else {
-  
-  $select = "SELECT * FROM books";
-
-  $results = mysqli_query($conn, $select);
-
-
-  $res = mysqli_fetch_assoc($results);
 }
-
-
 ?>
-
 
 
 
@@ -33,19 +22,12 @@ if (isset($_POST["search"]) && empty($_POST["query"]) === false) {
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Carti</title>
-  <link rel="stylesheet" href='carti.css'>
+  <title>Clients</title>
+  <link rel="stylesheet" href='clienti.css'>
 </head>
 
 <body>
   <div class="container">
-
-  <form action="./carti.php" method="post">
-
-    <input type="text" name="query" placeholder="Introduceti Genul" >
-
-    <button type="submit" name="search">Search</button>
-  </form>
 
     <table class="center">
       <thead>
@@ -54,15 +36,13 @@ if (isset($_POST["search"]) && empty($_POST["query"]) === false) {
 
           <th>NAME</th>
 
-          <th>AUTHOR</th>
+          <th>PRIMARY NAME</th>
 
-          <th>GENRE</th>
+          <th>UNIVERSITY</th>
 
-          <th>PAGE NUMBERS</th>
+          <th>YEAR OF STUDY</th>
 
-          <th>STATUS</th>
-
-          <th>ASSIGNED TO</th>
+          <th>SUBJECT MATTER</th>
 
           <th>ACTIONS </th>
         </tr>
@@ -76,25 +56,23 @@ if (isset($_POST["search"]) && empty($_POST["query"]) === false) {
             </td>
 
             <td>
-              <?php echo $res["title"]; ?>
+              <?php echo $res["name"]; ?>
             </td>
 
             <td>
-              <?php echo $res["author"]; ?>
+              <?php echo $res["primaryname"]; ?>
             </td>
 
             <td>
-              <?php echo $res["genre"]; ?>
+              <?php echo $res["university"]; ?>
             </td>
             <td>
-              <?php echo $res["pages"]; ?>
+              <?php echo $res["yearofstudy"]; ?>
             </td>
             <td>
-              <?php echo $res["status"]; ?>
+              <?php echo $res["subjectmatter"]; ?>
             </td>
-            <td>
-              <?php echo $res["assignedto"]; ?>
-            </td>
+
             <td>
               <form>
                 <a href="delete.php?id=<?php echo $res['id']; ?>">DELETE</a>
@@ -105,9 +83,15 @@ if (isset($_POST["search"]) && empty($_POST["query"]) === false) {
 
           </tr>
         <?php } ?>
+        
       </tbody>
     </table>
   </div>
+
+
+</body>
+
+</html>
 
 
 </body>

@@ -1,14 +1,25 @@
 <?php
 require 'db_conn.php';
 
+if (isset($_POST["search"]) && empty($_POST["query"]) === false) {
+  
+  $subjectmatter = mysqli_real_escape_string($conn, $_POST["query"]);
 
-$select = "SELECT * FROM clients";
+  $sql = "SELECT * FROM clients WHERE subjectmatter='$subjectmatter'";
+
+  $results = mysqli_query($conn, $sql);
+
+  $res = mysqli_fetch_assoc($results);
+} else {
+  
+  $select = "SELECT * FROM clients";
+
+  $results = mysqli_query($conn, $select);
 
 
-$results = mysqli_query($conn, $select);
+  $res = mysqli_fetch_assoc($results);
+}
 
-
-$res = mysqli_fetch_assoc($results);
 
 ?>
 
@@ -28,6 +39,12 @@ $res = mysqli_fetch_assoc($results);
 
 <body>
   <div class="container">
+  <form action="./clients.php" method="post">
+
+<input type="text" name="query" placeholder="Professor/Student" >
+
+<button type="submit" name="search">Search</button>
+</form>
 
     <table class="center">
       <thead>
